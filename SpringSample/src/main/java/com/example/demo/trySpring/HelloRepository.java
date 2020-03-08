@@ -8,16 +8,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 
 @Repository
-public class HelloRepsitory {
+public class HelloRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	public Map<String,Object> findOne(int id){
-		String query = "SELECT"
-				+ "employee_id"
-				+ "employee_name"
-				+ "age"
-				+ "from employee"
+		String query = "SELECT "
+				+ "employee_id,"
+				+ "employee_name,"
+				+ "age "
+				+ "from employee "
 				+ "where employee_id=?";
 		Map<String,Object> employee	= jdbcTemplate.queryForMap(query,id);
 		
